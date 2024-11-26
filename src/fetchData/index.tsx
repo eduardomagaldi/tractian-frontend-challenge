@@ -1,6 +1,6 @@
 const API_ENDPOINT = 'https://fake-api.tractian.com'
 
-export default async function (type: string, companyId: string) {
+export default async function (type: string, companyId?: string) {
   let url = null
 
   if (!companyId) {
@@ -25,7 +25,13 @@ export default async function (type: string, companyId: string) {
     )
   }
 
+  await sleep(1000)
+
   const resp = await fetch(url)
   const json = await resp.json()
   return json
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms))
 }
