@@ -1,4 +1,5 @@
 import React from 'react'
+import fetchData from '../../fetchData'
 
 interface Company {
   id: string
@@ -6,7 +7,7 @@ interface Company {
 }
 
 const CompaniesList = React.lazy(() =>
-  getCompaniesList().then((data) => {
+  fetchData('companies').then((data) => {
     return {
       default: () => {
         const companies = data
@@ -29,17 +30,6 @@ const CompaniesList = React.lazy(() =>
 )
 
 export default CompaniesList
-
-async function getCompaniesList() {
-  await sleep(1000)
-  const respCompanies = await fetch('https://fake-api.tractian.com/companies')
-  const json = await respCompanies.json()
-  return json
-}
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
 
 function EmptyList() {
   return <div>There is no available data.</div>

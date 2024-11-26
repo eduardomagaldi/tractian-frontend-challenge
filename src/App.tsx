@@ -1,10 +1,10 @@
 import './App.css'
-import VisualTreeSuspense from './components/VisualTreeSuspense'
+import VisualTree from './components/VisualTree'
 
 function App() {
   return (
     <>
-      <VisualTreeSuspense />
+      <VisualTree />
     </>
   )
 }
