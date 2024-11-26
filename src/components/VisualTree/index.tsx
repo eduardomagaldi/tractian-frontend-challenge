@@ -9,7 +9,7 @@ function App() {
   const [companiesList, setCompaniesList] = useState<Company[] | null>(null)
 
   useEffect(() => {
-    ;(async function getData() {
+    ;(async function () {
       const list = await getCompaniesList()
       setCompaniesList(list)
     })()
