@@ -5,21 +5,16 @@ const resource = fetchData('https://fake-api.tractian.com/companies')
 const Todos = () => {
   const todos = resource.read()
 
-  const renderTodos = todos.map((todo) => {
+  const renderTodos = todos.map((todo: any) => {
     const className = todo.status === 'Completed' ? 'todo-completed' : 'todo'
     return (
-      <li className={`todo ${className}`} key={todo.id}>
+      <div className={`todo ${className}`} key={todo.id}>
         {todo.name}
-      </li>
+      </div>
     )
   })
 
-  return (
-    <div>
-      <h3>Todos</h3>
-      <ol className="todos">{renderTodos}</ol>
-    </div>
-  )
+  return <div>{renderTodos}</div>
 }
 
 export default Todos
