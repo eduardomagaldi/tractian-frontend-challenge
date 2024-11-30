@@ -1,6 +1,7 @@
-import { Suspense } from 'react'
-import CompaniesList from '../CompaniesList'
+import { Suspense, lazy } from 'react'
 import Loading from '../Loading'
+
+const CompaniesList = lazy(() => import('../CompaniesList'))
 
 const App = () => {
   return (

@@ -25,13 +25,13 @@ export default async function (type: string, companyId?: string) {
     )
   }
 
-  await sleep(1000)
+  await sleep(5000)
 
   const resp = await fetch(url)
   const json = await resp.json()
   return json
 }
 
-function sleep(ms) {
+function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
