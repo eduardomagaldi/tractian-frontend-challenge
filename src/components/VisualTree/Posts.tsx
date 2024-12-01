@@ -27,10 +27,7 @@ function fetchPosts(url: string) {
       return res
     })
     .then((success) => {
-      console.log('success', success)
-
       status = 'fulfilled'
-
       result = success
     })
     // Fetch request has failed
@@ -39,8 +36,6 @@ function fetchPosts(url: string) {
 
       result = error
     })
-
-  console.log('result', result)
 
   return () => {
     if (status === 'pending') {

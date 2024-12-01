@@ -7,19 +7,15 @@ interface Company {
 }
 
 const LocationsList = ({ companyId }: { companyId: string }) => {
-  console.log('companyId', companyId)
-
   return <div>{companyId}</div>
 
   // fetchData('locations', companyId).then((data) => {
-  //   console.log('data', data)
   //   if (companyId) {
   //     return <>{companyId}</>
   //   }
   // })
   // <>{companyId}</>
   // return fetchData('locations', companyId).then((data) => {
-  //   console.log('data', data)
   //   return {
   //     default: () => {
   //       return <div>Location......... </div>
@@ -54,10 +50,6 @@ const LocationsList = ({ companyId }: { companyId: string }) => {
 //     },
 //   }
 // }),
-
-// const LocationsList = function (companyId) {
-//   console.log('companyId', companyId)
-// }
 
 export default LocationsList
 
