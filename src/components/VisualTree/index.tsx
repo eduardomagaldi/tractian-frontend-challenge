@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import Posts from './Posts'
+import Posts from '../CompaniesList/Posts'
 
 const MyPosts = () => {
   return (
